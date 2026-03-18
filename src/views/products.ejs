@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <h1>Añadir libros </h1>
+    <%- include('./partials/header') %>
+    <h1>Todos los libros disponibles</h1>
     <div class="gridCards">
         <% products.forEach((product) => { %>
             <form action="/carrito" method="POST" class="cardProducts">

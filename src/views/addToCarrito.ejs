@@ -1,4 +1,3 @@
-<h1>CARRITO</h1>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -10,14 +9,16 @@
 </head>
 
 <body>
+    <%- include('./partials/header') %>
     <h1>Carrito </h1>
-    <div class="gridCards">
-        <% carrito.forEach((product) => { %>
+    <div >
+        <% carrito.forEach((element) => { %>
             
-                <h2><%= product.name %></h2>
-                <p>Author: <%= carrito.cantidad %></p>
-                <p><%= carrito.product_id %> €</p>
-               
+            <div class="finalCart">
+                <h3><%= element.name %></h3>
+                <p><%= element.cantidad %> </p>
+                <p><%= element.price %> </p>
+            </div>
             
         <% }) %>
     </div>

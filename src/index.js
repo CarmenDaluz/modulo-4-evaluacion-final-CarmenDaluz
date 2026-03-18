@@ -33,7 +33,7 @@ app.listen(serverPort, () => {
 //5. ENDPOINTS 
 
     app.get('/', function (req, res) { 
-    res.send('Hello World! Im Carmen'); 
+    res.render('landingPage'); 
 
     })
     // PEDIR TODOS LOS PRODUCTOS DE LA API
@@ -83,12 +83,12 @@ app.listen(serverPort, () => {
 
     // PEDIR TODOS LOS LIBROS DE CARRITO
     app.get('/carritoFinal', async (req,res) => { 
-
-        let sql = 'SELECT * FROM carrito'; 
+         
+        let sql = 'SELECT products.name, carrito.cantidad , products.price FROM products INNER JOIN carrito ON products.idProducts = carrito.product_id;'; // Query para hablar con BD
         const connection = await getConnection(); //conexión con BD 
-        const [results, fields] = await connection.query(sql); 
-        //EJECUTA LA QUERY Y ALMACENA RESULTADOS EN RESULTS 
-        res.render('addToCarrito', { carrito: results }); 
+        const [results, fields] = await connection.query(sql); //hacemos pregunta 
+        
+        res.render('addToCarrito', { carrito: results }); //Renderizar el ejs con los datos pasados
         connection.end(); 
     });
 
