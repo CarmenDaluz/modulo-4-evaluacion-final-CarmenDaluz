@@ -42,14 +42,22 @@
     width: 20px;
 }
 
-.nav {
-    background-color: black;
+.navContainer {
+    background-color: rgb(59, 89, 59);
     color: white;
     padding: 1rem;
     display: flex;
     gap: 1.5rem;
-    justify-content: right;
+    justify-content: space-between;
+    align-items: center;
     a {
         color: white;
+        text-decoration: none;
     }
+}
+
+.nav {
+    
+    display: flex;
+    gap: 2rem;
 }

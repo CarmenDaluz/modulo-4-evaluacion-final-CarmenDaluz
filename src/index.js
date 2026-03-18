@@ -59,7 +59,7 @@ app.listen(serverPort, () => {
         const connection = await getConnection();
         const [results, fields] = await connection.query(sql, [name, author, ISBN, price, category, stock]);
         
-        res.redirect('/');
+        res.redirect('/products');
         connection.end();
 
     });
@@ -76,7 +76,7 @@ app.listen(serverPort, () => {
         const connection = await getConnection();
         const [results, fields] = await connection.query(sql, [cantidad, product_id]);
         
-        res.redirect('/carrito');
+        res.redirect('/carritoFinal');
         connection.end();
 
     });
