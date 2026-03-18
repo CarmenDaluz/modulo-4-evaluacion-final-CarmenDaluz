@@ -1,0 +1,25 @@
+<h1>CARRITO</h1>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de compra de mi libreria</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <h1>Carrito </h1>
+    <div class="gridCards">
+        <% carrito.forEach((product) => { %>
+            
+                <h2><%= product.name %></h2>
+                <p>Author: <%= carrito.cantidad %></p>
+                <p><%= carrito.product_id %> €</p>
+               
+            
+        <% }) %>
+    </div>
+</body>
+</html>

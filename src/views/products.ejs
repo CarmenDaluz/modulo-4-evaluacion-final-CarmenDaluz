@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de datos de mi libreria</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <h1>Añadir libros </h1>
+    <div class="gridCards">
+        <% products.forEach((product) => { %>
+            <form action="/carrito" method="POST" class="cardProducts">
+                <h2><%= product.name %></h2>
+                <p>Author: <%= product.author %></p>
+                <p><%= product.price %> €</p>
+                <input type="hidden" name="product_id" value="<%= product.idProducts %>">
+                <input type="number" name="cantidad">
+                <button type="submit">Agregar al carrito</button>
+            </form>
+        <% }) %>
+    </div>
+</body>
+</html>
