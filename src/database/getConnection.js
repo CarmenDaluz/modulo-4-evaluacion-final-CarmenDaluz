@@ -11,7 +11,7 @@ async function getConnection() {
 
   await connection.connect(); 
   console.log( 
-    `Conexión establecida con la base de datos                             (    identificador=${connection.threadId})` 
+    `Conexión establecida con la base de datos (identificador=${connection.threadId})` 
 
   ); 
   return connection;} 

@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base de datos de mi libreria</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
 
-<body>
+    <%- include('./partials/head') %>
     <%- include('./partials/header') %>
     <h1>Todos los libros disponibles</h1>
     <div class="gridCards">
@@ -22,5 +14,6 @@
             </form>
         <% }) %>
     </div>
+    <a href="/products">Volver atrás</a>
 </body>
 </html>
