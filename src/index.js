@@ -8,6 +8,7 @@ const { postNewProduct } = require('./controllers/postNewProduct.js')
 const { postCarrito } = require('./controllers/postCarrito.js')
 const { getCarrito } = require('./controllers/getCarrito.js')
 const { getNewProduct } = require('./controllers/getNewProduct.js')
+const { deleteCarrito } = require('./controllers/postDeleteCarrito');
 
     
 const app = express(); 
@@ -42,6 +43,8 @@ app.listen(serverPort, () => {
     
     app.post('/carrito', postCarrito);
     app.get('/carrito', getCarrito);
+    app.post('/carrito/delete', deleteCarrito);
+
 
 //servidor de estáticos
 

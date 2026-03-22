@@ -5,9 +5,9 @@ const postCarrito = async (req,res) => {
     const { cantidad, product_id } = req.body;
     let sql = 'INSERT INTO Carrito (cantidad, product_id) VALUES (?, ?);'
     const connection = await getConnection();
-    const [results, fields] = await connection.query(sql, [cantidad, product_id]);
+    const [results] = await connection.query(sql, [cantidad, product_id]);
     
-    res.redirect('/carritoFinal');
+    res.redirect('/carrito');
     connection.end();
 
 };

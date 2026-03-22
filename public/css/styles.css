@@ -61,3 +61,12 @@
     display: flex;
     gap: 2rem;
 }
+
+.carrito {
+    margin-left: 2rem;
+}
+
+.carritoContainer {
+    margin-left: 2rem;
+
+}

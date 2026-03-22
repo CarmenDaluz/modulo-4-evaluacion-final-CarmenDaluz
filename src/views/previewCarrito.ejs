@@ -1,19 +1,29 @@
 
     <%- include('./partials/head') %>
     <%- include('./partials/header') %>
+    <div class="carrito"> 
     <h1>Carrito </h1>
-    <div >
-        <% carrito.forEach((element) => { %>
-            
-            <div class="finalCart">
-                <h3><%= element.name %></h3>
-                <p><%= element.price %>€</p>
-                <p><%= element.cantidad %> </p>
-                <p><%= element.price * element.cantidad%>€ </p>
-            </div>
-            
-        <% }) %>
+        <div class="carritoContainer">
+            <% carrito.forEach((element) => { %>
+                
+                <div class="finalCart">
+                    <h3><%= element.name %></h3>
+                    <p><%= element.price %>€</p>
+                    <p><%= element.cantidad %> </p>
+                    <p><%= element.price * element.cantidad%>€ </p>
+                    <form action="/carrito/delete" method="POST">
+                        <input type="hidden" name="product_id" value="<%= element.product_id %>">
+                        <button type="submit">Eliminar</button>
+                    </form>
+                    
+                </div>
+                
+            <% }) %>
+            <% let total = carrito.reduce((acc, el) => acc + el.price * el.cantidad, 0); %>
+                        <h2>Total carrito: <%= total %>€</h2>
+        </div>
+        <a href="/products">Volver atrás</a>
+
     </div>
-    <a href="/products">Volver atrás</a>
 </body>
 </html>
