@@ -34,6 +34,7 @@ modulo-4-evaluacion-final/
 │   │   ├── getNewProduct.js
 │   │   ├── getProducts.js
 │   │   ├── postCarrito.js
+|   |   |── postDeleteCarrito.js
 │   │   └── postNewProduct.js
 │   ├── database/
 │   │   └── getConnection.js
@@ -56,8 +57,6 @@ La base de datos `data_base_module_4_CD` contiene dos tablas:
 
 - **Productos** — almacena los libros con los campos `idProductos`, `name`, `author`, `price`, `category` y `stock`
 - **Carrito** — almacena las líneas del carrito con `idCarrito`, `cantidad` y `product_id` (clave foránea a Productos)
-
-> El total del carrito se calcula mediante query (precio × cantidad), no se almacena como columna.
 
 ---
 
